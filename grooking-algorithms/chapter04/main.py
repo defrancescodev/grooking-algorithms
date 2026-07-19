@@ -3,13 +3,25 @@ def sum_array(array):
         return 0
     
 
-    return array[0] + sum_array(array[1:])    
+    return array[0] + sum_array(array[1:])   
+
+def sum_array2(array, index):
+    if index == len(array):
+        return index
+    return array[0] + sum_array2(array, index + 1)
+
 
 def count_numbers(array):
     if len(array) == 0:
         return 0
     
     return 1 + count_numbers(array[1:])
+
+def count_numbers2(array, index):
+    if index == len(array):
+        return index
+    
+    return count_numbers2(array, index + 1)
      
 
 def find_highest_value(array):
@@ -21,5 +33,7 @@ def find_highest_value(array):
 
 
 print(sum_array([1, 2, 3]))
+print(sum_array2([1, 2, 3], 0))
 print(count_numbers([1, 2, 3]))
+print(count_numbers2([1, 2, 3], 0))
 print(find_highest_value([1, 2, 3]))
